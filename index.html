@@ -202,17 +202,24 @@
       <div class="bg-warning text-dark shadow rounded p-3 mb-3"
         style="max-width: 60vw; min-width: 300px; width: 100%;">
         <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
-          <div class="mb-2 mb-md-0 text-end">
+          <div class="mb-2 mb-md-0 text-end d-inline">
             Мы <b>НЕ</b> используем cookie для улучшения работы сайта.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br>Эт<br>о окошко создано просто, чтобы бесить пользователей
+            <br>Эт<br>
+            <p class="d-inline text-start">&nbsp;&nbsp;о окошко со&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;здано прост</p>
+            <p class="text-center">о,</p>
+            чтобы бесить пользователей
           </div>
-          <div>
+          <div class="w-25">
             <button class="btn btn-primary p-0 pt-5" id="cookie-not-accept"
               onclick="document.querySelector('.myCookieBanner')
-                .style = 'display: none !important';">НЕ принять</button>
-            <button class="btn btn-outline-secondary pt-0 pe-0" id="cookie-decline"
+                .style='display: none !important';">НЕ принять</button>
+            <button class="btn btn-outline-secondary pt-0 pe-0 w-25" id="cookie-decline"
               onclick="document.querySelector('.myCookieBanner')
-                .style = 'display: none !important';">Отклонить</button>
+                .style='display: none !important;';">Отклонить</button>
           </div>
         </div>
       </div>
