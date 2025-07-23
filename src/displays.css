@@ -1,0 +1,45 @@
+@media screen and (max-width: 699px) {
+  html {
+    font-size: 70%;
+  }
+
+  .myFormAndTable {
+    margin: 0 12% !important;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 899px) {
+  html {
+    font-size: 130%;
+  }
+
+  .myFormAndTable {
+    margin: 0 8% !important;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1023px) {
+  html {
+    font-size: 130%;
+  }
+
+  .myFormAndTable {
+    margin: 0 12% !important;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1025px) {
+  html {
+    font-size: 121%;
+  }
+}
+
+@media screen and (min-width: 1026px) {
+  html {
+    font-size: 105%;
+  }
+
+  .myFormAndTable {
+    padding: 0 9% !important;
+  }
+}

@@ -2,39 +2,43 @@
   padding: 0.5rem 0.5rem;
 } */
 
-.myInput {
-  box-sizing: content-box;
-  width: 3ch;
-  margin: 0 auto;
-  /* padding: 0 1ch; */
-  text-align: center;
-}
-
-.myMb-0 {
-  margin-bottom: 0;
-}
-
+/* Иконка переключения темы: */
 .bi {
   width: 1.3em;
   height: 1.3em;
 
   fill: white;
 }
+.myColor {
+  background-color: rgb(113, 44, 249) !important;
+  /* background-color: rgb(144, 92, 247) !important; */
+}
+.myColor:hover {
+  background-color: rgb(101, 4, 224) !important;
+  /* background-color: rgb(126, 49, 227) !important; */
+}
+
+.myInput {
+  box-sizing: content-box;
+  width: 1ch;
+  margin: 0;
+  /* padding: 0 1ch; */
+  text-align: center;
+  border-radius: 0;
+}
+
+/* .myEqualHeight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5em;
+} */
 
 /* .bd-mode-toggle {
   width: 53px;
   height: 41px;
 } */
-
-.myColor {
-  background-color: rgb(113, 44, 249) !important;
-  /* background-color: rgb(144, 92, 247) !important; */
-}
-
-.myColor:hover {
-  background-color: rgb(101, 4, 224) !important;
-  /* background-color: rgb(126, 49, 227) !important; */
-}
+  
 
 /* .mySize {
   width: 53px;

@@ -4,9 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>rect-number_Witcher</title>
+  <title>△-number_Witcher</title>
+  <!-- <link rel="icon" href="/src/favicons/favicon-1100.png" type="image/x-icon"> -->
+  <!-- <link rel="icon" href="/src/favicons/Site-favicon-16x16.ico" type="image/x-icon"> -->
+   <link rel="icon" href="/src/favicons/colored-256x256.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="src/displays.css">
 
 </head>
 
@@ -80,125 +84,145 @@
     </ul>
   </div>
 
-  <div class="px-4 py-5 my-3 text-center col-lg-6 mx-auto">
-    <!-- <div class="col-lg-6 mx-auto"> -->
-      <form class="col-lg-8 text-center mx-auto">
-        <h1 class="display-5 fw-bold text-body-emphasis">Что качаем?</h1>
+  <h1 class="display-5 fw-bold text-body-emphasis text-center mt-5 mx-auto">Что качаем?</h1>
+  <div class="px-4 text-center col-lg-6 mx-auto myFormAndTable">
+    <form id="baseForm" class="col-lg-10 text-center mx-auto mb-5 card p-3">
+      <div class="btn-group mb-3" role="group" name="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio"
+          id="btnRadioSimpleSkill" autocomplete="off" checked>
+        <label class="btn btn-outline-primary d-flex align-items-center justify-content-center"
+          for="btnRadioSimpleSkill">Простой навык</label>
 
-        <div class="btn-group mb-3" role="group" name="Basic radio toggle button group">
-          <input type="radio" class="btn-check" name="btnradio" id="btnRadioSS" autocomplete="off" checked>
-          <label class="btn btn-outline-primary" for="btnRadioSS">Простой навык</label>
+        <input type="radio" class="btn-check" name="btnradio"
+          id="btnRadioHardSkill" autocomplete="off">
+        <label class="btn btn-outline-primary d-flex align-items-center justify-content-center"
+          for="btnRadioHardSkill">Сложный навык</label>
 
-          <input type="radio" class="btn-check" name="btnradio" id="btnRadioHS" autocomplete="off">
-          <label class="btn btn-outline-primary" for="btnRadioHS">Сложный навык (*2)</label>
+        <input type="radio" class="btn-check" name="btnradio"
+          id="btnRadioBaseParameter" autocomplete="off">
+        <label class="btn btn-outline-primary d-flex align-items-center justify-content-center"
+          for="btnRadioBaseParameter">Основной параметр</label>
+      </div>
 
-          <input type="radio" class="btn-check" name="btnradio" id="btnRadioBP" autocomplete="off">
-          <label class="btn btn-outline-primary" for="btnRadioBP">Характеристику (*10)</label>
-        </div>
+      <div class="mb-3">
+        <h5 class="my-0 fw-normal mb-2">Модификатор</h4>
+          <div class="mx-auto d-flex justify-content-center">
+            <button class="btn btn-outline-secondary rounded-end-0"
+              type="button" onclick="changeValue(event)">-</button>
+            <input name="modificator" class="form-control text-center myInput" value="0"
+              oninput="resizeMyInput(this)">
+            <button class="btn btn-outline-secondary rounded-start-0"
+              type="button" onclick="changeValue(event)">+</button>
+          </div>
+      </div>
 
-        <div class="mb-3">
-          <h4 class="my-0 fw-normal mb-2">Модификатор</h4>
-          <input name="modificator" class="form-control text-center myInput" value="0"
-            oninput="resizeMyInput(this)">
+      <h5 class="my-0 fw-normal mb-2">Уровни</h4>
+      <div class="row row-cols-2 row-cols-md-2 mb-2 text-center">
 
-          <!-- value="0" oninput="this.style.width = (this.value.length + 1) + 'ch';"> -->
-        </div>
-
-        <h4 class="my-0 fw-normal mb-2">Уровни</h4>
-        <div class="row row-cols-2 row-cols-md-2 mb-2 text-center">
-
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-1">
-                <h4 class="my-0 fw-normal">текущий</h4>
-              </div>
-              <div class="card-body py-2">
-                <div class="mx-auto">
-                  <input type="text" name="Current level" class="form-control myInput"
-                    value="0" oninput="resizeMyInput(this)">
-                </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-1">
+              <h5 class="my-0 fw-normal fs-6">текущий</h5>
+            </div>
+            <div class="card-body py-2">
+              <div class="mx-auto d-flex justify-content-center">
+                <button class="btn btn-outline-secondary rounded-end-0"
+                  type="button" onclick="changeValue(event)">-</button>
+                <input type="text" id="levelInput" name="Current level"
+                  class="form-control text-center myInput rounded-0"
+                  value="1" oninput="resizeMyInput(this)">
+                <button class="btn btn-outline-secondary rounded-start-0"
+                  type="button" onclick="changeValue(event)">+</button>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col">
-            <div class="card mb-4 rounded-3 shadow-sm">
-              <div class="card-header py-1">
-                <h4 class="my-0 fw-normal">желаемый</h4>
-              </div>
-              <div class="card-body py-2">
-                <div class="mx-auto">
-                  <input type="text" name="Wanted level" class="form-control myInput"
-                    value="3" oninput="resizeMyInput(this)">
-                </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-1">
+              <h5 class="my-0 fw-normal fs-6">желаемый</h5>
+            </div>
+            <div class="card-body py-2">
+              <div class="mx-auto d-flex justify-content-center">
+                <button class="btn btn-outline-secondary rounded-end-0"
+                  type="button" onclick="changeValue(event)">-</button>
+                <input type="text" name="Wanted level"
+                  class="form-control myInput rounded-0"
+                  value="3" oninput="resizeMyInput(this)">
+                <button class="btn btn-outline-secondary rounded-start-0"
+                  type="button" onclick="changeValue(event)">+</button>
               </div>
             </div>
           </div>
-
         </div>
 
-        <button type="button" id="collectBtn" class="btn btn-primary">Собрать данные</button>
-      </form>
+      </div>
 
-      <h4 class="my-0 fw-normal mb-2">Потребуется О.У.</h4>
+      <button type="button" id="collectBtn" class="btn btn-primary"
+        onclick="calculator(this)">Посчитать</button>
+    </form>
 
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
+    <h5 id="requiredSkillPoints" class="my-0 fw-normal mb-2">Потребуется О.У.</h4>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-body py-2 myTable-Box">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Уровень</th>
+                <th scope="col">Уровень + Модификатор</th>
+                <th scope="col">О.У. суммарно</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>2</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
-          <!-- <div class="card-body py-2">3</div> -->
-          <div class="card-body py-2">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Уровень</th>
-                  <th scope="col">Уровень + Модификатор</th>
-                  <th scope="col">О.У. суммарно</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>1</td>
-                  <td>1</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>2</td>
-                  <td>2</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>3</td>
-                  <td>4</td>
-                </tr>
-              </tbody>
-            </table>
+    <div class="myCookieBanner fixed-bottom w-100 d-flex justify-content-center"
+      style="z-index:1055; max-width: 60vw;">
+      <div class="bg-warning text-dark shadow rounded p-3 mb-3"
+        style="max-width: 60vw; min-width: 300px; width: 100%;">
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+          <div class="mb-2 mb-md-0 text-end">
+            Мы <b>НЕ</b> используем cookie для улучшения работы сайта.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>Эт<br>о окошко создано просто, чтобы бесить пользователей
+          </div>
+          <div>
+            <button class="btn btn-primary p-0 pt-5" id="cookie-not-accept"
+              onclick="document.querySelector('.myCookieBanner')
+                .style = 'display: none !important';">НЕ принять</button>
+            <button class="btn btn-outline-secondary pt-0 pe-0" id="cookie-decline"
+              onclick="document.querySelector('.myCookieBanner')
+                .style = 'display: none !important';">Отклонить</button>
           </div>
         </div>
       </div>
-
-      <div class="myCookieBanner fixed-bottom w-100 d-flex justify-content-center" style="z-index:1055; max-width: 60vw;">
-        <div class="bg-warning text-dark shadow rounded p-3 mb-3" style="max-width: 60vw; min-width: 300px; width: 100%;">
-          <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
-            <div class="mb-2 mb-md-0 text-end">
-              Мы <b>НЕ</b> используем cookie для улучшения работы сайта.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <br>Эт<br>о окошко создано просто, чтобы бесить пользователей
-            </div>
-            <div>
-              <button class="btn btn-primary me-2 pb-0" id="cookie-accept"
-                onclick="document.querySelector('.myCookieBanner').style = 'display: none !important';">НЕ принять</button>
-              <button class="btn btn-outline-secondary pt-0 pe-0" id="cookie-decline"
-                onclick="document.querySelector('.myCookieBanner').style = 'display: none !important';">Отклонить</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
 
   </div>
 
 
   <script src="js/themes.js"></script>
-  <script src="js/resizeMyInput.js"></script>
+   <script src="js/myFunctions.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/assets/js/color-modes.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
