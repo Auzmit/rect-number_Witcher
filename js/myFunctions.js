@@ -59,7 +59,6 @@ function renderTable(data) {
   table.appendChild(tbody);
   
   for (let i = currCurrLevel; i < goalCurrLevel; i += 1) {
-    console.log('asdasdasd');
     currCurrLevel += 1;
     const tr = document.createElement('tr');
     const th = document.createElement('th');
@@ -74,7 +73,7 @@ function renderTable(data) {
     tr.appendChild(tdLevelMod);
 
     const tdSumPoints = document.createElement('td');
-    sumPoints += currCurrLevel * coeffPoints;
+    sumPoints += (currCurrLevel - 1) * coeffPoints;
     tdSumPoints.textContent = sumPoints;
     tr.appendChild(tdSumPoints);
 
@@ -82,7 +81,6 @@ function renderTable(data) {
     console.log(currCurrLevel);
   }
 
-  // console.log(tableBox);
   tableBox.innerHTML = '';
   tableBox.appendChild(table);
 }
@@ -128,6 +126,7 @@ function calculator(e) {
 
 // calculator(e);
 
+// '+' and '-' buttons change input's value
 function changeValue(event) {
   const btn = event.currentTarget;
   const value = Number(btn.textContent + '1');
@@ -136,8 +135,4 @@ function changeValue(event) {
   const input = parent.querySelector('input');
   input.value = Number(input.value) + value;
   resizeMyInput(input);
-  // console.log(input.value);
-  // console.log(Number(input.value));
-  // console.log(input);
-  // console.log(value);
 }
