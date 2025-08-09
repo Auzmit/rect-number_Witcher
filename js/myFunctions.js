@@ -1,7 +1,5 @@
 function resizeMyInput(el) {
   el.style.width = (el.value.length) + 'ch';
-  // console.log(el.style.width);
-  console.log('ababuba');
 }
 
 function renderTable(data) {
@@ -73,12 +71,11 @@ function renderTable(data) {
     tr.appendChild(tdLevelMod);
 
     const tdSumPoints = document.createElement('td');
-    sumPoints += (currCurrLevel - 1) * coeffPoints;
+    sumPoints += (currCurrLevel - 1 === 0 ? 1 : currCurrLevel - 1) * coeffPoints;
     tdSumPoints.textContent = sumPoints;
     tr.appendChild(tdSumPoints);
 
     tbody.appendChild(tr);
-    console.log(currCurrLevel);
   }
 
   tableBox.innerHTML = '';
